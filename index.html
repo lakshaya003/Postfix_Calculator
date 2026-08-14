@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Postfix++ Interpreter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b4bdcd;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 50px;
+            width: 700px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 75%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .panel {
+            margin-top: 25px;
+            padding: 15px;
+            background: #ccd5e8;
+            border-radius: 8px;
+        }
+
+        .panel h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .stack-item {
+            background: white;
+            margin: 6px 0;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 5px solid #596c93;
+            font-weight: bold;
+        }
+
+        .top-stack {
+            background: #dbeafe;
+        }
+
+        .symbol-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .symbol-card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .dict-card {
+            background: #8aa2c1;
+        }
+
+        .array-card {
+            background: #8eacaf;
+        }
+
+
+        .examples {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Postfix++ Interpreter</h1>
+
+        <p>
+            Evaluate postfix expressions using a stack, variables (A-Z),
+            symbol tables, execution tracing and error handling.
+        </p>
+
+        <input id="input" placeholder="Example: 3 4 5 + *">
+
+        <button onclick="run()">Run</button>
+
+        <!-- STACK -->
+
+        <div class="panel">
+
+            <h3>📚 Visual Stack</h3>
+
+            <div id="visualStack">
+                Empty Stack
+            </div>
+
+        </div>
+
+        <!-- SYMBOL TABLE -->
+
+        <div class="panel">
+
+            <h3>🗂 Symbol Tables</h3>
+
+            <div id="variables">
+                No variables defined
+            </div>
+
+        </div>
+
+        <!-- OPERATION LOG -->
+
+        <div class="panel">
+
+            <h3>⭐ Symbol Table Operation Log</h3>
+
+            <div id="operationLog">
+                No operations yet.
+            </div>
+
+        </div>
+
+        <!-- EXAMPLES -->
+
+        <div class="panel">
+
+            <h3>📝 Postfix++ Examples</h3>
+
+            <div class="examples">
+
+                <b>Addition (+)</b><br>
+                <code>3 4 +</code> → 7
+
+                <br><br>
+
+                <b>Subtraction (-)</b><br>
+                <code>10 3 -</code> → 7
+
+                <br><br>
+
+                <b>Multiplication (*)</b><br>
+                <code>5 6 *</code> → 30
+
+                <br><br>
+
+                <b>Division (/)</b><br>
+                <code>20 4 /</code> → 5
+
+                <br><br>
+
+                <b>Variable Assignment (=)</b><br>
+                <code>A 10 =</code><br>
+                <code>B 5 =</code>
+
+                <br><br>
+
+                <b>Using Variables</b><br>
+                <code>A B +</code> → 15
+
+                <br><br>
+
+                <b>Delete Variable</b><br>
+                <code>DEL A</code>
+
+                <br><br>
+
+                <b>Complex Expression</b><br>
+                <code>3 4 5 + *</code> → 27
+
+            </div>
+
+        </div>
+
+        <!-- HISTORY -->
+
+        <div class="panel">
+
+            <h3>🕒 Command History</h3>
+
+            <div id="history"></div>
+
+        </div>
+
+        <!-- TRACE -->
+
+        <div class="panel">
+
+            <h3>🔍 Execution Trace</h3>
+
+            <div id="trace"></div>
+
+        </div>
+
+        <footer>
+            • Algorithms and Data Structures II Mid-Term Coursework •
+
+        </footer>
+
+
+    </div>
+
+    <script src="calculator.js"></script>
+
+</body>
+
+
+</html>
