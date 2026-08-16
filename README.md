@@ -69,8 +69,19 @@ Output:
 
 ## How to Run
 
-Download or clone the repository and open `index.html` in a web browser.
+Clone the repository:
 
+```bash
+git clone https://github.com/lakshaya003/Postfix_Calculator.git
+```
+Navigate to the project directory:
+```bash
+cd Postfix_Calculator
+```
+Start a local web server:
+```bash
+python3 -m http.server 8000
+```
 ## Project Context
 
 Developed as part of my Computer Science Algorithms and Data Structures coursework.
